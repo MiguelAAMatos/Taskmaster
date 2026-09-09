@@ -1,3 +1,140 @@
-<html>
-    TESTE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Taskmaster</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="stage">
+
+    <!-- Header -->
+    <header>
+        <div class="crown">♛</div>
+
+        <h1>THE TASKMASTER</h1>
+
+        <p class="subtitle">
+            A task has been prepared for you.
+        </p>
+    </header>
+
+
+    <!-- Main content -->
+    <main>
+
+        <!-- Envelope -->
+        <section id="envelope-container">
+
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter-preview">
+                    <span>YOUR TASK</span>
+                </div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-front">
+                    <div class="seal">TM</div>
+                </div>
+
+            </div>
+
+            <p class="instruction">
+                Click the envelope.
+            </p>
+
+        </section>
+
+
+        <!-- Task letter -->
+        <section id="task-container" class="hidden">
+
+            <div class="letter">
+
+                <div class="letter-decoration top">
+                    ✦ ✦ ✦
+                </div>
+
+                <p class="letter-small">
+                    BY ORDER OF THE TASKMASTER
+                </p>
+
+                <h2>YOUR TASK</h2>
+
+                <div class="divider"></div>
+
+                <p class="task-text">
+                    Construct the tallest tower you can using only
+                    objects currently within your reach.
+                </p>
+
+                <p class="task-text">
+                    Your tower must stand unsupported for
+                    <strong>10 seconds.</strong>
+                </p>
+
+                <p class="task-time">
+                    You have <strong>15 minutes.</strong>
+                </p>
+
+                <p class="task-final">
+                    Your time starts now.
+                </p>
+
+                <div class="letter-decoration bottom">
+                    ✦ ✦ ✦
+                </div>
+
+            </div>
+
+
+            <!-- Timer -->
+            <div class="timer-section">
+
+                <p class="timer-label">
+                    TIME REMAINING
+                </p>
+
+                <div id="timer">
+                    15:00
+                </div>
+
+                <button id="start-button">
+                    START THE CLOCK
+                </button>
+
+                <button id="reset-button" class="secondary-button">
+                    RESET TASK
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            The Taskmaster is watching.
+        </p>
+
+        <span>♛</span>
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
 </html>
