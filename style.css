@@ -12,12 +12,10 @@ body {
     min-height: 100vh;
 
     background:
-        radial-gradient(
-            circle at center,
+        radial-gradient(circle at center,
             #5b1717 0%,
             #3b0d0d 45%,
-            #210606 100%
-        );
+            #210606 100%);
 
     color: #f4e6c1;
 
@@ -39,11 +37,9 @@ body::before {
     pointer-events: none;
 
     background:
-        radial-gradient(
-            ellipse at top,
+        radial-gradient(ellipse at top,
             rgba(255, 220, 130, 0.12),
-            transparent 60%
-        );
+            transparent 60%);
 
     z-index: 0;
 }
@@ -160,8 +156,7 @@ main {
 
 .envelope:hover {
     transform:
-        translateY(-8px)
-        rotate(-1deg);
+        translateY(-8px) rotate(-1deg);
 }
 
 
@@ -173,12 +168,10 @@ main {
     inset: 0;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #c89e52,
             #e1bd72,
-            #b88c42
-        );
+            #b88c42);
 
     border-radius: 4px;
 
@@ -216,7 +209,7 @@ main {
     box-shadow:
         0 5px 15px rgba(0, 0, 0, 0.25);
 
-    z-index: 2;
+    z-index: 4;
 }
 
 
@@ -234,14 +227,14 @@ main {
     border-left: 215px solid transparent;
     border-right: 215px solid transparent;
 
-    border-top: 145px solid #d7ae60;
+    border-top: 180px solid #d7ae60;
 
     transform-origin: top center;
 
     transition:
         transform 0.8s ease;
 
-    z-index: 4;
+    z-index: 6;
 
     filter:
         drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
@@ -253,27 +246,18 @@ main {
 .envelope-front {
     position: absolute;
 
-    bottom: 0;
-
-    left: 0;
-
-    width: 100%;
-    height: 150px;
+    inset: 0;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #c89d50,
-            #dcb56c
-        );
+            #dcb56c);
 
-    clip-path: polygon(
-        0 0,
-        50% 55%,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
+    clip-path: polygon(0 0,
+            50% 60%,
+            100% 0,
+            100% 100%,
+            0 100%);
 
     z-index: 5;
 }
@@ -284,10 +268,8 @@ main {
 .seal {
     position: absolute;
 
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
+    left: -35px;
+    top: -35px;
 
     width: 70px;
     height: 70px;
@@ -295,11 +277,9 @@ main {
     border-radius: 50%;
 
     background:
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             #8c1616,
-            #4f0707
-        );
+            #4f0707);
 
     border: 4px solid #6d0d0d;
 
@@ -323,10 +303,41 @@ main {
 
 .envelope.open .envelope-flap {
     transform: rotateX(180deg);
+    animation: flapZIndex 0.8s forwards;
+}
+
+@keyframes flapZIndex {
+    0%, 30% { z-index: 6; }
+    31%, 100% { z-index: 3; }
 }
 
 .envelope.open {
     cursor: default;
+}
+
+.envelope.open .letter-preview {
+    animation: extractPaper 1.2s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes extractPaper {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        z-index: 4;
+    }
+
+    50% {
+        transform: translateY(-250px) scale(1.1);
+        opacity: 1;
+        z-index: 4;
+    }
+
+    100% {
+        transform: translateY(-250px) scale(1.5);
+        opacity: 0;
+        z-index: 4;
+    }
 }
 
 
@@ -376,11 +387,9 @@ main {
     padding: 65px 70px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #f5e7bf,
-            #ead6a4
-        );
+            #ead6a4);
 
     color: #392116;
 
@@ -498,6 +507,7 @@ main {
    ============================== */
 
 .timer-section {
+    display: none;
     text-align: center;
 
     margin-top: 45px;
@@ -561,11 +571,9 @@ button {
     cursor: pointer;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #d8ae5e,
-            #b88b3e
-        );
+            #b88b3e);
 
     color: #32100b;
 
@@ -667,25 +675,22 @@ footer span {
         opacity: 0;
 
         transform:
-            translateY(80px)
-            rotate(3deg)
-            scale(0.9);
+            translateY(80px) rotate(3deg) scale(0.9);
     }
 
     to {
         opacity: 1;
 
         transform:
-            translateY(0)
-            rotate(-0.5deg)
-            scale(1);
+            translateY(0) rotate(-0.5deg) scale(1);
     }
 }
 
 
 @keyframes pulse {
 
-    0%, 100% {
+    0%,
+    100% {
         opacity: 0.6;
     }
 
@@ -697,7 +702,8 @@ footer span {
 
 @keyframes timerPulse {
 
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
 
@@ -715,6 +721,11 @@ footer span {
 
     .stage {
         padding: 25px 15px;
+    }
+
+    .taskmaster-logo {
+        width: 10px;
+        height: 10px;
     }
 
     header {

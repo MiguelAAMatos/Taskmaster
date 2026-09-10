@@ -62,7 +62,7 @@ envelope.addEventListener("click", () => {
 
         taskContainer.classList.remove("hidden");
 
-    }, 900);
+    }, 1800);
 
 });
 
