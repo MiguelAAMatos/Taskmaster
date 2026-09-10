@@ -253,6 +253,11 @@ main {
             #c89d50,
             #dcb56c);
 
+    -webkit-clip-path: polygon(0 0,
+            50% 60%,
+            100% 0,
+            100% 100%,
+            0 100%);
     clip-path: polygon(0 0,
             50% 60%,
             100% 0,
@@ -744,7 +749,7 @@ footer span {
     .envelope-flap {
         border-left-width: 165px;
         border-right-width: 165px;
-        border-top-width: 112px;
+        border-top-width: 140px;
     }
 
     .letter-preview {
@@ -754,10 +759,6 @@ footer span {
         right: 25px;
 
         font-size: 20px;
-    }
-
-    .envelope-front {
-        height: 115px;
     }
 
     .letter {
