@@ -630,9 +630,9 @@ button:active {
    ============================== */
 
 footer {
-    margin-top: auto;
+    margin-top: 20px;
 
-    padding-top: 60px;
+    padding-top: 0;
 
     text-align: center;
 
@@ -729,8 +729,8 @@ footer span {
     }
 
     .taskmaster-logo {
-        width: 10px;
-        height: 10px;
+        width: 80px;
+        height: 80px;
     }
 
     header {
